@@ -65,4 +65,5 @@ def predictt(v, m, text):
     print(result)
 
 
-predictt(vectorizer, model, "two teen couples go to a church party")
+text = input("enter the text")
+predictt(vectorizer, model, text)
