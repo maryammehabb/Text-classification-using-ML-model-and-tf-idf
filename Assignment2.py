@@ -67,3 +67,14 @@ def predictt(v, m, text):
 
 text = input("enter the text")
 predictt(vectorizer, model, text)
+
+def plotting(tfidf,labels):
+    k = 2
+    tfs_reduced = TruncatedSVD(n_components=k, random_state=7).fit_transform(tfidf)
+    tfs_embedded = TSNE(n_components=2).fit_transform(tfs_reduced)
+    ax = plt.axes()
+    plt.scatter(tfs_embedded[:, 0], tfs_embedded[:, 1], c=labels)
+    plt.show()
+
+plotting(X_train,y_train)
+
